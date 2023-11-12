@@ -34,7 +34,7 @@ const Project = () => {
                 <p>{project.description}</p>
                 <p>Date: {project.date}</p>
                 <Link to="../">
-                    <p>Back to art projects</p>
+                    <p>Back to projects</p>
                 </Link>
             </div>
         </Wrapper>
