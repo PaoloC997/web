@@ -1,0 +1,531 @@
+
+
+
+
+
+
+const artProjects1 = [
+  {
+    id: 1,
+    title: 'Open Platform of The Spanish Acoustic Heritage',
+    description: 'A vibrant abstract painting that explores the dynamic interplay of colors and shapes.',
+    image1: 'https://picsum.photos/1200/800/?image=104',
+    image2: 'https://picsum.photos/1200/800/?image=102',
+    image3: 'https://picsum.photos/1200/800/?image=103',
+    place: 'Spain',
+  },
+  {
+    id: 2,
+    title: 'Sounds of the industry',
+    description: 'A vibrant abstract painting that explores the dynamic interplay of colors and shapes.',
+    image1: 'https://picsum.photos/1200/800/?image=102',
+    image2: 'https://picsum.photos/1200/800/?image=102',
+    image3: 'https://picsum.photos/1200/800/?image=103',
+    place: 'Spain',
+  },
+
+  {
+    id: 3,
+    title: 'We rescue the acoustic heritage of El Prat!',
+    description: 'Photographs from urban explorations showcasing the hidden beauty of city life.',
+    image1: 'https://picsum.photos/1200/800/?image=106',
+    image2: 'https://picsum.photos/1200/800/?image=102',
+    image3: 'https://picsum.photos/1200/800/?image=103',
+    place: 'Spain',
+  },
+  {
+    id: 4,
+    title: "THE ABBOT´S CLIFF SOUND MIRROR",
+    description: 'A mixed media artwork that harmoniously combines various natural elements.',
+    image1: 'https://picsum.photos/1200/800/?image=107',
+    image2: 'https://picsum.photos/1200/800/?image=102',
+    image3: 'https://picsum.photos/1200/800/?image=103',
+    place: 'UK',
+  },
+  {
+    id: 5,
+    title: "Manifest - Work in Progress",
+    description: 'A beautiful oil painting capturing the grace and movement of a dancer.',
+    image1: 'https://picsum.photos/1200/800/?image=101',
+    image2: 'https://picsum.photos/1200/800/?image=102',
+    image3: 'https://picsum.photos/1200/800/?image=103',
+    place: 'Lisbon, Budapest, Nantes',
+  },
+
+  {
+    id: 6,
+    title: "Journey to the center of sound - in the MONOM 4D sound system",
+    description: 'An imaginative digital artwork that transports viewers to a surreal dreamscape.',
+    image1: 'https://picsum.photos/1200/800/?image=101',
+    image2: 'https://picsum.photos/1200/800/?image=102',
+    image3: 'https://picsum.photos/1200/800/?image=103',
+    place: 'France',
+  },
+  {
+    id: 7,
+    title: "JOURNEY TO THE CENTER OF THE SOUND",
+    description: 'An imaginative digital artwork that transports viewers to a surreal dreamscape.',
+    image1: 'https://picsum.photos/1200/800/?image=101',
+    image2: 'https://picsum.photos/1200/800/?image=102',
+    image3: 'https://picsum.photos/1200/800/?image=103',
+    place: 'Iceland',
+  },
+  {
+    id: 8,
+    title: "JOURNEY TO THE CENTER OF THE SOUND - MONON RESIDENCE",
+    description: 'An imaginative digital artwork that transports viewers to a surreal dreamscape.',
+    image1: 'https://picsum.photos/1200/800/?image=101',
+    image2: 'https://picsum.photos/1200/800/?image=102',
+    image3: 'https://picsum.photos/1200/800/?image=103',
+    place: 'GERMANY',
+  },
+  {
+    id: 9,
+    title: "Wave Field Synthesis Artist in Residence @A+E Lab",
+    description: 'An imaginative digital artwork that transports viewers to a surreal dreamscape.',
+    image1: 'https://picsum.photos/1200/800/?image=101',
+    image2: 'https://picsum.photos/1200/800/?image=102',
+    image3: 'https://picsum.photos/1200/800/?image=103',
+    place: 'UK',
+  },
+  {
+    id: 10,
+    title: "SAFEGUARDING ACOUSTIC HERITAGE OF THINGVELLIR NATIONAL PARK",
+    description: 'An imaginative digital artwork that transports viewers to a surreal dreamscape.',
+    image1: 'https://picsum.photos/1200/800/?image=101',
+    image2: 'https://picsum.photos/1200/800/?image=102',
+    image3: 'https://picsum.photos/1200/800/?image=103',
+    place: 'ICELAND',
+  },
+  {
+    id: 11,
+    title: "SOROLL",
+    description: 'An imaginative digital artwork that transports viewers to a surreal dreamscape.',
+    image1: 'https://picsum.photos/1200/800/?image=101',
+    image2: 'https://picsum.photos/1200/800/?image=102',
+    image3: 'https://picsum.photos/1200/800/?image=103',
+    place: 'SPAIN',
+  },
+  {
+    id: 12,
+    title: "PROCES",
+    description: 'An imaginative digital artwork that transports viewers to a surreal dreamscape.',
+    image1: 'https://picsum.photos/1200/800/?image=101',
+    image2: 'https://picsum.photos/1200/800/?image=102',
+    image3: 'https://picsum.photos/1200/800/?image=103',
+    place: 'SPAIN',
+  },
+  {
+    id: 13,
+    title: "Estampes del silenci, del vertigen, del membre fantasma, de l'èxtasi, de tu",
+    description: 'An imaginative digital artwork that transports viewers to a surreal dreamscape.',
+    image1: 'https://picsum.photos/1200/800/?image=101',
+    image2: 'https://picsum.photos/1200/800/?image=102',
+    image3: 'https://picsum.photos/1200/800/?image=103',
+    place: 'SPAIN',
+  },
+  {
+    id: 14,
+    title: "Caminades Sonores",
+    description: 'An imaginative digital artwork that transports viewers to a surreal dreamscape.',
+    image1: 'https://picsum.photos/1200/800/?image=101',
+    image2: 'https://picsum.photos/1200/800/?image=102',
+    image3: 'https://picsum.photos/1200/800/?image=103',
+    place: 'SPAIN',
+  },
+  {
+    id: 15,
+    title: "Gothic Acoustics in Contemporary Art: A Set of Audio Tools for La Capella",
+    description: 'An imaginative digital artwork that transports viewers to a surreal dreamscape.',
+    image1: 'https://picsum.photos/1200/800/?image=101',
+    image2: 'https://picsum.photos/1200/800/?image=102',
+    image3: 'https://picsum.photos/1200/800/?image=103',
+    place: 'SPAIN',
+  },
+];
+
+const artProjectsList = [
+  {
+    id: 1,
+   title: {
+      en: 'Open Platform of The Spanish Acoustic Heritage',
+      es: 'Plataforma Abierta del Patrimonio Acústico Español',
+      cat: 'Plataforma Oberta del Patrimoni Acústic Espanyol',
+      ger: 'Offene Plattform des spanischen akustischen Erbes',
+    },
+    description: {
+      en: 'An open library dedicated to compiling and sharing a vast collection of impulse responses of diverse and captivating acoustic environments across the country.',
+      es: 'Una biblioteca abierta dedicada a compilar y compartir una vasta colección de respuestas al impulso de diversos entornos acústicos cautivadores en todo el país.',
+      cat: 'Una biblioteca oberta dedicada a compilar i compartir una àmplia col·lecció de respostes a impulsos d\'entorns acústics diversos i captivadors a tot el país.',
+      ger: 'Eine offene Bibliothek, die sich der Zusammenstellung und Weitergabe einer umfangreichen Sammlung von Impulsantworten verschiedener und faszinierender akustischer Umgebungen im ganzen Land widmet.',
+    },
+    image1: 'https://picsum.photos/1200/800/?image=104',
+    image2: 'https://picsum.photos/1200/800/?image=102',
+    image3: 'https://picsum.photos/1200/800/?image=103',
+    place: {
+      en: 'Spain',
+      es: 'España',
+      cat: 'Espanya',
+      ger: 'Spanien',
+    },
+  },
+  {
+    id: 2,
+   title: {
+      en: 'Sounds of the industry',
+      es: 'Sonidos de la industria',
+      cat: 'Sónecs de la indústria',
+      ger: 'Klänge der Industrie',
+    },
+    description: {
+      en: 'Safeguarding and archiving of the sound and acoustic heritage of the process of industrialization in Catalonia of the centres of the Territorial System of the National Museum of Science and Technology of Catalonia (MNACTEC)',
+      es: 'Salvaguarda y archivo del patrimonio sonoro y acústico del proceso de industrialización de Cataluña de los centros del Sistema Territorial del Museo Nacional de la Ciencia y Técnica de Cataluña (MNACTEC)',
+      cat: 'Salvaguarda i arxiu del patrimoni sonor i acústic del procés d\'industrialització de Catalunya dels centres del Sistema Territorial del Museu Nacional de la Ciència i la Tècnica de Catalunya (MNACTEC)',
+      ger: 'Sicherung und Archivierung des Klang- und Akustikerbes des Industrialisierungsprozesses in Katalonien der Zentren des Territorial Systems des Nationalmuseums für Wissenschaft und Technologie von Katalonien (MNACTEC)',
+    },
+    image1: 'https://picsum.photos/1200/800/?image=102',
+    image2: 'https://picsum.photos/1200/800/?image=102',
+    image3: 'https://picsum.photos/1200/800/?image=103',
+    place: {
+      en: 'Catalonia, Spain',
+      es: 'Cataluña, España',
+      cat: 'Catalunya, Espanya',
+      ger: 'Katalonien, Spanien',
+    },
+  },
+  {
+    id: 3,
+   title: {
+      en: 'Safeguard the acoustic heritage of El Prat',
+      es: 'Salvaguardar el patrimonio acústico de El Prat',
+      cat: 'Salvaguardar el patrimoni acústic d\'El Prat',
+      ger: 'Akustisches Erbe von El Prat schützen',
+    },
+    description: {
+      en: 'Community art project. Giving value to the local heritage and offering a method for incorporating the territory into musical production in an aesthetic and discursive manner.',
+      es: 'Proyecto de arte comunitario. Poniendo en valor el patrimonio local y ofreciendo una metodología para incorporar el territorio a la producción musical estética y discursivamente.',
+      cat: 'Projecte d\'art comunitari. Donant valor al patrimoni local i oferint un mètode per incorporar el territori a la producció musical d\'una manera estètica i discursiva.',
+      ger: 'Gemeinschaftsprojekt. Wertigkeit des lokalen Erbes vermitteln und eine Methode zur Integration des Territoriums in die musikalische Produktion auf ästhetische und diskursive Weise anbieten.',
+    },
+    image1: 'https://picsum.photos/1200/800/?image=106',
+    image2: 'https://picsum.photos/1200/800/?image=102',
+    image3: 'https://picsum.photos/1200/800/?image=103',
+    place: {
+      en: 'El Prat del Llobregat, Spain',
+      es: 'El Prat del Llobregat, España',
+      cat: 'El Prat del Llobregat, Espanya',
+      ger: 'El Prat del Llobregat, Spanien',
+    },
+  },
+  {
+    id: 4,
+   title: {
+      en: 'Caminades Sonores',
+      es: 'Caminadas Sonoras',
+      cat: 'Caminades Sonores',
+      ger: 'Klangwanderungen',
+    },
+    description: {
+      en: 'Catalan soundscape depicted in binaural & 360º AV formats by local creatives.',
+      es: 'Paisaje sonoro catalán representado en formatos binaurales y AV de 360º por creadores locales.',
+      cat: 'Paisatge sonor català representat en formats binaurals i AV de 360º per creadors locals.',
+      ger: 'Katalanische Klanglandschaft dargestellt in binauralen und 360º AV-Formaten von lokalen Kreativen.',
+    },
+    image1: 'https://picsum.photos/1200/800/?image=101',
+    image2: 'https://picsum.photos/1200/800/?image=102',
+    image3: 'https://picsum.photos/1200/800/?image=103',
+    place: {
+      en: 'Barcelona, Spain',
+      es: 'Barcelona, España',
+      cat: 'Barcelona, Espanya',
+      ger: 'Barcelona, Spanien',
+    }
+  },
+  {
+    id: 5,
+   title: {
+      en: 'Gothic Acoustics in Contemporary Art: A Set of Audio Tools for La Capella',
+      es: 'Acústica gótica en el arte contemporáneo: un conjunto de herramientas de audio para La Capella',
+      cat: 'Acústica gòtica en l\'art contemporani: un conjunt d\'eines d\'àudio per a La Capella',
+      ger: 'Gotische Akustik in der zeitgenössischen Kunst: Ein Satz von Audio-Tools für La Capella',
+    },
+    description: {
+      en: 'Acoustic safeguarding of La Capella. This study not only provides valuable information on archeo-acoustics but also enables artists and musicians to simulate their pieces in the space using a plugin.',
+      es: 'Salvaguardia acústica de La Capella. Este estudio no solo proporciona información valiosa sobre la arqueo-acústica sino que también permite a artistas y músicos simular sus obras en el espacio utilizando un complemento.',
+      cat: 'Salvaguarda acústica de La Capella. Aquest estudi no només proporciona informació valuosa sobre l\'arqueoacústica sinó que també permet als artistes i músics simular les seves obres a l\'espai utilitzant un connector.',
+      ger: 'Akkustische Sicherung von La Capella. Diese Studie liefert nicht nur wertvolle Informationen zur Archeo-Akustik, sondern ermöglicht es auch Künstlern und Musikern, ihre Stücke im Raum mit einem Plugin zu simulieren.',
+    },
+    image1: 'https://picsum.photos/1200/800/?image=101',
+    image2: 'https://picsum.photos/1200/800/?image=102',
+    image3: 'https://picsum.photos/1200/800/?image=103',
+    place: {
+      en: 'Spain',
+      es: 'España',
+      cat: 'Espanya',
+      ger: 'Spanien',
+    }
+  },
+  {
+    id: 6,
+   title: {
+      en: 'The Abbot\'s cliff sound mirror',
+      es: 'El espejo de sonido del acantilado del abad',
+      cat: 'El mirall de so del penya-segat de l\'abadia',
+      ger: 'Der Schallspiegel von Abbot\'s Cliff',
+    },
+    description: {
+      en: 'Strategies on its safeguard addressing past usage, present conditions, and future applications. This concrete structure, built in 1928 as part of an early warning air defense system, is a well-preserved example of pre-Radar technology.',
+      es: 'Estrategias para su salvaguardia abordando el uso pasado, las condiciones actuales y las aplicaciones futuras. Esta estructura de hormigón, construida en 1928 como parte de un sistema de defensa aérea de alerta temprana, es un ejemplo bien conservado de tecnología anterior al radar.',
+      cat: 'Estratègies per a la seva salvaguarda abordant l\'ús passat, les condicions actuals i les aplicacions futures. Aquesta estructura de formigó, construïda el 1928 com a part d\'un sistema de defensa aèria d\'alerta primerenca, és un exemple ben conservat de tecnologia prèvia al radar.',
+      ger: 'Strategien zur Sicherung unter Berücksichtigung der früheren Nutzung, der aktuellen Bedingungen und zukünftiger Anwendungen. Dieser Betonbau, der 1928 als Teil eines Frühwarn-Luftverteidigungssystems errichtet wurde, ist ein gut erhaltenes Beispiel für Technologie vor Radar.',
+    },
+    image1: 'https://picsum.photos/1200/800/?image=107',
+    image2: 'https://picsum.photos/1200/800/?image=102',
+    image3: 'https://picsum.photos/1200/800/?image=103',
+    place: {
+      en: 'Kent, UK',
+      es: 'Kent, Reino Unido',
+      cat: 'Kent, Regne Unit',
+      ger: 'Kent, Vereinigtes Königreich',
+    },
+  },
+  {
+    id: 7,
+   title: {
+      en: 'Safeguarding Acoustic Heritage of Thingvellir National Park',
+      es: 'Salvaguardia del patrimonio acústico del Parque Nacional de Thingvellir',
+      cat: 'Salvaguarda del patrimoni acústic del Parc Nacional de Thingvellir',
+      ger: 'Sicherung des akustischen Erbes des Thingvellir-Nationalparks',
+    },
+    description: {
+      en: 'Research of Acoustic heritage of Lögberg in Thingvellir National Park: impulse response library and an approach to future studies',
+      es: 'Investigación del patrimonio acústico de Lögberg en el Parque Nacional de Thingvellir: biblioteca de respuestas al impulso y enfoque para futuros estudios.',
+      cat: 'Investigació del patrimoni acústic de Lögberg al Parc Nacional de Thingvellir: biblioteca de respostes a impulsos i enfocament per a estudis futurs.',
+      ger: 'Forschung zum akustischen Erbe von Lögberg im Thingvellir-Nationalpark: Impulsantwortbibliothek und Ansatz für zukünftige Studien.',
+    },
+    image1: 'https://picsum.photos/1200/800/?image=101',
+    image2: 'https://picsum.photos/1200/800/?image=102',
+    image3: 'https://picsum.photos/1200/800/?image=103',
+    place: {
+      en: 'Bláskógabyggð, Iceland',
+      es: 'Bláskógabyggð, Islandia',
+      cat: 'Bláskógabyggð, Islàndia',
+      ger: 'Bláskógabyggð, Island',
+    },
+  },
+    {
+      id: 8,
+     title: {
+        en: 'Estampes del silenci, del vertigen, del membre fantasma, de l\'èxtasi, de tu',
+        es: 'Estampas del silencio, del vértigo, del miembro fantasma, del éxtasis, de ti',
+        cat: 'Estampes del silenci, del vertigen, del membre fantasma, de l\'èxtasi, de tu',
+        ger: 'Stiche der Stille, des Schwindels, des Phantomglieds, der Ekstase, von dir',
+      },
+      description: {
+        en: 'VR immersive poetry piece located in a duomo. Investigating the potential of virtual acoustics in poetry.',
+        es: 'Pieza de poesía inmersiva en realidad virtual situada en un duomo. Investigando el potencial de la acústica virtual en la poesía.',
+        cat: 'Peça de poesia immersiva en realitat virtual situada en un duomo. Investigant el potencial de l\'acústica virtual en la poesia.',
+        ger: 'VR-immersives Gedichtsstück in einem Duomo. Untersuchung des Potenzials virtueller Akustik in der Poesie.',
+      },
+      image1: 'https://picsum.photos/1200/800/?image=101',
+      image2: 'https://picsum.photos/1200/800/?image=102',
+      image3: 'https://picsum.photos/1200/800/?image=103',
+      place: {
+        en: 'Barcelona, Spain',
+        es: 'Barcelona, España',
+        cat: 'Barcelona, Espanya',
+        ger: 'Barcelona, Spanien',
+      },
+    },
+    {
+      id: 9,
+     title: {
+        en: 'Manifest, Work in Progress',
+        es: 'Manifiesto, Trabajo en progreso',
+        cat: 'Manifest, Treball en progrés',
+        ger: 'Manifest, Arbeit im Gange',
+      },
+      description: {
+        en: 'Residency programme – Artistic Journey, re-imagining Europe’s collective memory of the transatlantic trade of enslaved people and its existing cultural traces.',
+        es: 'Programa de residencia - Viaje artístico, reimaginando la memoria colectiva de Europa sobre el comercio transatlántico de personas esclavizadas y sus rastros culturales existentes.',
+        cat: 'Programa de residència - Viatge artístic, reimaginant la memòria col·lectiva d\'Europa sobre el comerç transatlàntic de persones esclavitzades i els seus rastres culturals existents.',
+        ger: 'Residenzprogramm - Künstlerische Reise, Neugestaltung der kollektiven Erinnerung Europas an den transatlantischen Sklavenhandel und seine vorhandenen kulturellen Spuren.',
+      },
+      image1: 'https://picsum.photos/1200/800/?image=101',
+      image2: 'https://picsum.photos/1200/800/?image=102',
+      image3: 'https://picsum.photos/1200/800/?image=103',
+      place: {
+        en: 'Europe or Lisbon, Budapest, Nantes',
+        es: 'Europa o Lisboa, Budapest, Nantes',
+        cat: 'Europa o Lisboa, Budapest, Nantes',
+        ger: 'Europa oder Lissabon, Budapest, Nantes',
+      },
+    },
+    {
+      id: 10,
+     title: {
+        en: 'Video game technology as an AV art and culture dissemination strategy: Case study "Journey to the center of sound" in the MONOM 4D sound system',
+        es: 'La tecnología de videojuegos como estrategia de difusión artística y cultural AV: Estudio de caso "Viaje al centro del sonido" en el sistema de sonido MONOM 4D',
+        cat: 'La tecnologia dels videojocs com a estratègia de difusió artística i cultural AV: Estudi de cas "Viatge al centre del so" en el sistema de so MONOM 4D',
+        ger: 'Videospieltechnologie als AV-Kunst- und Kulturdistributionsstrategie: Fallstudie "Reise zum Zentrum des Klangs" im MONOM 4D Sound System',
+      },
+      description: {
+        en: 'Presentation at IRCAM Forum Workshops 2023',
+        es: 'Presentación en los Talleres del Foro IRCAM 2023',
+        cat: 'Presentació als Tallers del Fòrum IRCAM 2023',
+        ger: 'Präsentation bei den IRCAM Forum Workshops 2023',
+      },
+      image1: 'https://picsum.photos/1200/800/?image=101',
+      image2: 'https://picsum.photos/1200/800/?image=102',
+      image3: 'https://picsum.photos/1200/800/?image=103',
+      place: {
+        en: 'Paris, France',
+        es: 'París, Francia',
+        cat: 'París, França',
+        ger: 'Paris, Frankreich',
+      },
+    },
+    {
+      id: 11,
+     title: {
+        en: 'Journey to the center of the sound',
+        es: 'Viaje al centro del sonido',
+        cat: 'Viatge al centre del so',
+        ger: 'Reise zum Zentrum des Klangs',
+      },
+      description: {
+        en: 'Immersive AV poetic narrative inspired by the Jules Verne novel "Voyage au centre de la Terre".',
+        es: 'Narrativa poética AV inmersiva inspirada en la novela de Julio Verne "Viaje al centro de la Tierra".',
+        cat: 'Narrativa poètica AV immersiva inspirada en la novel·la de Jules Verne "Viatge al centre de la Terra".',
+        ger: 'Immersive AV poetische Erzählung, inspiriert von Jules Vernes Roman "Reise zum Mittelpunkt der Erde".',
+      },
+      image1: 'https://picsum.photos/1200/800/?image=101',
+      image2: 'https://picsum.photos/1200/800/?image=102',
+      image3: 'https://picsum.photos/1200/800/?image=103',
+      place: {
+        en: 'Iceland',
+        es: 'Islandia',
+        cat: 'Islàndia',
+        ger: 'Island',
+      },
+    },
+    {
+      id: 12,
+      title: {
+        en: 'Monom residency Journey to the center of the sound',
+        es: 'Residencia Monom Viaje al centro del sonido',
+        cat: 'Residència Monom Viatge al centre del so',
+        ger: 'Monom-Residenz Reise ins Zentrum des Klangs',
+      },
+      description: {
+        en: 'Exploring the expressive possibilities of spatial sound as an artistic medium.',
+        es: 'Explorando las posibilidades expresivas del sonido espacial como medio artístico.',
+        cat: 'Explorant les possibilitats expressives del so espacial com a mitjà artístic.',
+        ger: 'Erkundung der expressiven Möglichkeiten von räumlichem Klang als künstlerisches Medium.',
+      },
+      image1: 'https://picsum.photos/1200/800/?image=101',
+      image2: 'https://picsum.photos/1200/800/?image=102',
+      image3: 'https://picsum.photos/1200/800/?image=103',
+      place: {
+        en: 'Berlin, Germany',
+        es: 'Berlín, Alemania',
+        cat: 'Berlín, Alemanya',
+        ger: 'Berlin, Deutschland',
+      },
+    },
+    {
+      id: 13,
+      title: {
+        en: 'Wave Field Synthesis Artist in Residence @A+E Lab',
+        es: 'Artista en Residencia de Síntesis de Campo de Ondas en A+E Lab',
+        cat: 'Artista en Residència de Síntesi de Camp d’Ones a A+E Lab',
+        ger: 'Wave Field Synthesis Künstler in Residence @A+E Lab',
+      },
+      description: {
+        en: 'Exploring the expressive possibilities of spatial sound as an artistic medium. The WFS system from The Game of Life consists of 192 speakers and 24 subwoofers, arranged around the audience in a square formation of 10x10 meters. Presented at Conference SC2022, University of Kent.',
+        es: 'Explorando las posibilidades expresivas del sonido espacial como medio artístico. El sistema WFS de The Game of Life consta de 192 altavoces y 24 subwoofers, dispuestos alrededor del público en una formación cuadrada de 10x10 metros. Presentado en la Conferencia SC2022, Universidad de Kent.',
+        cat: 'Explorant les possibilitats expressives del so espacial com a mitjà artístic. El sistema WFS de The Game of Life consta de 192 altaveus i 24 subwoofers, disposats al voltant del públic en una formació quadrada de 10x10 metres. Presentat a la Conferència SC2022, Universitat de Kent.',
+        ger: 'Erkundung der expressiven Möglichkeiten von räumlichem Klang als künstlerisches Medium. Das WFS-System von The Game of Life besteht aus 192 Lautsprechern und 24 Subwoofern, die um das Publikum in einer quadratischen Formation von 10x10 Metern angeordnet sind. Vorgestellt auf der Konferenz SC2022, Universität Kent.',
+      },
+      image1: 'https://picsum.photos/1200/800/?image=101',
+      image2: 'https://picsum.photos/1200/800/?image=102',
+      image3: 'https://picsum.photos/1200/800/?image=103',
+      place: {
+        en: 'Chatham, UK',
+        es: 'Chatham, Reino Unido',
+        cat: 'Chatham, Regne Unit',
+        ger: 'Chatham, Vereinigtes Königreich',
+      },
+    },
+    {
+      id: 14,
+      title: {
+        en: 'Soroll',
+        es: 'Soroll',
+        cat: 'Soroll',
+        ger: 'Soroll',
+      },
+      description: {
+        en: 'Sound installation at Estruch medialab Residency. An investigation of documentary sources and artistic practice building a bridge between the past of thetitleile city and the current Catalan city.',
+        es: 'Instalación sonora en la Residencia Estruch medialab. Una investigación de fuentes documentales y práctica artística que construye un puente entre el pasado de la ciudadtitleil y la actual ciudad catalana.',
+        cat: "Instal·lació sonora a la Residència Estruch medialab. Una investigació de fonts documentals i pràctica artística que construeix un pont entre el passat de la ciutat tèxtil i l'actual ciutat catalana.",
+        ger: 'Klanginstallation in der Residenz Estruch medialab. Eine Untersuchung von Dokumentarquellen und künstlerischer Praxis, die eine Brücke zwischen der Vergangenheit dertitleilstadt und der aktuellen katalanischen Stadt schlägt.',
+      },
+      image1: 'https://picsum.photos/1200/800/?image=101',
+      image2: 'https://picsum.photos/1200/800/?image=102',
+      image3: 'https://picsum.photos/1200/800/?image=103',
+      place: {
+        en: 'Sabadell, Spain',
+        es: 'Sabadell, España',
+        cat: 'Sabadell, Espanya',
+        ger: 'Sabadell, Spanien',
+      },
+    },
+    {
+      id: 15,
+      title: {
+        en: 'Proces',
+        es: 'Proces',
+        cat: 'Proces',
+        ger: 'Proces',
+      },
+      description: {
+        en: 'Multichannel sound composition composed using only the sound archive of the original machinery from the Catalan industrialization process.',
+        es: 'Composición de sonido multicanal compuesta utilizando solo el archivo de sonido de la maquinaria original del proceso de industrialización catalán.',
+        cat: 'Composició de so multicanal composta utilitzant només l\'arxiu de so de la maquinària original del procés d\'industrialització català.',
+        ger: 'Mehrklang-Soundkomposition, komponiert ausschließlich mit dem Tonarchiv der originalen Maschinen aus dem katalanischen Industrialisierungsprozess.',
+      },
+      image1: 'https://picsum.photos/1200/800/?image=101',
+      image2: 'https://picsum.photos/1200/800/?image=102',
+      image3: 'https://picsum.photos/1200/800/?image=103',
+      place: {
+        en: 'Barcelona, Spain',
+        es: 'Barcelona, España',
+        cat: 'Barcelona, Espanya',
+        ger: 'Barcelona, Spanien',
+      },
+    }
+];
+
+const projectsText = [
+  {
+      id: 1,
+      heading: {
+          en: "PROJECTS",
+          es: "PROYECTOS",
+          cat: "PROJECTES",
+          ger: "PROJEKTE"
+      },
+      text: {
+          en: "We fuse space and sound perception to craft unique narratives.",
+          es: "Fusionamos espacio y percepción sonora para crear narrativas únicas.",
+          cat: "Fusionem espai i percepció sonora per crear narratives úniques.",
+          ger: "Wir verschmelzen Raum und Klangwahrnehmung, um einzigartige Erzählungen zu gestalten."
+      }
+  },
+
+]
+
+export { artProjectsList, projectsText };
+
+

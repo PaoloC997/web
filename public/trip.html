@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: black;
+        }
+
+        #spiral-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .emoji {
+            font-size: 24px;
+            position: absolute;
+            display: inline-block;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        #center-emoji {
+            font-size: 200px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div id="spiral-container"></div>
+    <div id="center-emoji">😊</div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let context;
+            let bufferLoader;
+
+            document.body.addEventListener('click', function () {
+                // Start animation and create audio context when the user clicks on the page
+                createSpiral();
+                createAudioContext();
+            });
+
+            function createSpiral() {
+                const container = document.getElementById('spiral-container');
+                const centerEmoji = document.getElementById('center-emoji');
+                const negativeExpressions = ['😢', '😠', '😡', '😞', '😩']; // Add more negative expressions as needed
+                let spiralGrowing = true;
+
+                let angle = 0;
+                let radius = 20;
+                let step = 20;
+                let emojiSize = 24;
+
+                setInterval(() => {
+                    const emoji = document.createElement('div');
+                    const expressionIndex = Math.floor(Math.random() * negativeExpressions.length);
+                    emoji.innerHTML = negativeExpressions[expressionIndex];
+                    emoji.className = 'emoji';
+
+                    const x = radius * Math.cos(angle);
+                    const y = radius * Math.sin(angle);
+
+                    emoji.style.transform = `translate(${x}px, ${y}px) scale(${spiralGrowing ? 1 : 0.5})`;
+                    emoji.style.fontSize = `${emojiSize}px`;
+
+                    container.appendChild(emoji);
+
+                    angle += step;
+                    radius += 0.1;
+                    emojiSize += 0.01;
+
+                    // Play sound every time a new emoji appears
+                    play();
+
+                    // Remove emojis to prevent memory overflow
+                    if (container.childElementCount > 500) {
+                        container.removeChild(container.firstChild);
+                    }
+
+                    // Check if emojis are almost leaving the screen
+                    if (radius > 400 && spiralGrowing) {
+                        spiralGrowing = false;
+                        fadeInCenterEmoji();
+                    }
+                }, 40);
+            }
+
+            function fadeInCenterEmoji() {
+                const centerEmoji = document.getElementById('center-emoji');
+                centerEmoji.style.opacity = 1;
+                centerEmoji.style.transition = 'opacity 10s ease-in-out';
+            }
+
+            function createAudioContext() {
+                context = new (window.AudioContext || window.webkitAudioContext)();
+
+                if (!context.createGain)
+                    context.createGain = context.createGainNode;
+                if (!context.createDelay)
+                    context.createDelay = context.createDelayNode;
+                if (!context.createScriptProcessor)
+                    context.createScriptProcessor = context.createJavaScriptNode;
+            }
+
+            function playSound(buffer, time) {
+                const source = context.createBufferSource();
+                source.buffer = buffer;
+                source.connect(context.destination);
+                source[source.start ? 'start' : 'noteOn'](time);
+            }
+
+            function loadSounds(obj, soundMap, callback) {
+                const names = [];
+                const paths = [];
+                for (const name in soundMap) {
+                    const path = soundMap[name];
+                    names.push(name);
+                    paths.push(path);
+                }
+
+                bufferLoader = new BufferLoader(context, paths, function (bufferList) {
+                    for (let i = 0; i < bufferList.length; i++) {
+                        const buffer = bufferList[i];
+                        const name = names[i];
+                        obj[name] = buffer;
+                    }
+                    if (callback) {
+                        callback();
+                    }
+                });
+                bufferLoader.load();
+            }
+
+            function BufferLoader(context, urlList, callback) {
+                this.context = context;
+                this.urlList = urlList;
+                this.onload = callback;
+                this.bufferList = new Array();
+                this.loadCount = 0;
+            }
+
+            BufferLoader.prototype.loadBuffer = function (url, index) {
+                // Load buffer asynchronously
+                const request = new XMLHttpRequest();
+                request.open("GET", url, true);
+                request.responseType = "arraybuffer";
+
+                const loader = this;
+
+                request.onload = function () {
+                    // Asynchronously decode the audio file data in request.response
+                    loader.context.decodeAudioData(
+                        request.response,
+                        function (buffer) {
+                            if (!buffer) {
+                                alert('error decoding file data: ' + url);
+                                return;
+                            }
+                            loader.bufferList[index] = buffer;
+                            if (++loader.loadCount == loader.urlList.length)
+                                loader.onload(loader.bufferList);
+                        },
+                        function (error) {
+                            console.error('decodeAudioData error', error);
+                        }
+                    );
+                }
+
+                request.onerror = function () {
+                    alert('BufferLoader: XHR error');
+                }
+
+                request.send();
+            }
+
+            BufferLoader.prototype.load = function () {
+                for (let i = 0; i < this.urlList.length; ++i)
+                    this.loadBuffer(this.urlList[i], i);
+            }
+
+            function play() {
+                const loader2 = new BufferLoader(context, ["./img/logos/creepy.mp3"], onLoaded2);
+
+                function onLoaded2(buffers) {
+                    const source = context.createBufferSource();
+                    const volume = context.createGain();
+                    volume.gain.value = 0.3;
+                    source.buffer = buffers[0];
+                    source.playbackRate.value = Math.random() * 4;
+                    source.connect(volume);
+                    volume.connect(context.destination);
+                    source.start();
+                }
+
+                loader2.load();
+            }
+        });
+    </script>
+</body>
+</html>

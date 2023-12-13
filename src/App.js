@@ -1,39 +1,37 @@
-// Import necessary modules and components
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import ProjectList from './components/ProjectList';
-import Project from './components/Project';
-import Carousel from './components/Carousel';
-import Navbar from './components/Navbar';
+import { LanguageProvider } from './context/LanguageContext';
+import Navbar from './components/common/Navbar';
+import Footer from './components/common/Footer';
+import Services from './components/services/Services';
+import ProjectList from './components/projects/ProjectList';
+import Project from './components/projects/Project';
+import Home from './components/home/Home'; 
+import About from './components/about/About';
+import { ParallaxProvider } from "react-scroll-parallax";
+import { UpButton } from './components/common/UpButton';
 
-// Create a parent component that includes both Carousel and ProjectList
-const Home = () => {
-  return (
-    <div>
-      <Carousel />
-      <ProjectList />
-    </div>
-  );
-};
 
-// App component
 function App() {
   return (
-   
-    <Router>
-    <Navbar/>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <div>
-              <Navbar />
-              <Home />
-            </div>}
-          />
-        <Route path="/project/:id" element={<Project />} />
-      </Routes>
-    </Router>
+    <ParallaxProvider>
+      <LanguageProvider>
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/projects" element={<ProjectList />} />
+            <Route path="/services" element={<Services/>} />
+            <Route path="/services/:id" element={<Services/>} />
+            <Route path="/project/:id" element={<Project />} />
+            <Route path="/project" element={<Project />} />
+          </Routes>
+          <UpButton/>
+          <Footer />
+        </Router>
+      </LanguageProvider>
+    </ParallaxProvider>
   );
 }
 
